@@ -1,0 +1,63 @@
+package ATMProcess;
+import java.util.*;
+public class ATM {
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+long acc_no;
+String acc_holder;
+int pin_num;
+System.out.println("Enter Your Account Number:");
+   acc_no=sc.nextLong();
+   System.out.println("Enter Account Holder's Name:");
+   acc_holder=sc.next();
+   System.out.println("Enter Your PIN Number:");
+   pin_num=sc.nextInt();
+int balance =0, withdraw, deposit;  
+        while(true)  
+        {  
+            System.out.println("ATM");  
+            System.out.println("Click 1 for Withdraw");  
+            System.out.println("Click 2 for Deposit");  
+            System.out.println("Click 3 for Check Balance");  
+            System.out.println("Click 4 for EXIT");  
+            System.out.print("Choose the operation you want to perform:");  
+            int choice = sc.nextInt();  
+            switch(choice)  
+            {  
+        case 1:  
+        System.out.print("Enter money to be withdrawn:");  
+        withdraw = sc.nextInt();  
+        if(balance >= withdraw)  
+        {  
+            balance = balance - withdraw;  
+            System.out.println("Please collect your money");  
+        }  
+        else  
+        {    
+            System.out.println("Insufficient Balance");  
+        }  
+        System.out.println("");  
+        break;  
+   
+        case 2:              
+        System.out.print("Enter money to be deposited:");  
+        deposit = sc.nextInt();  
+        balance = balance + deposit;  
+        System.out.println("Your Money has been successfully deposited");  
+        System.out.println("");  
+        break;  
+   
+        case 3:    
+        System.out.println("Balance : "+balance);  
+        System.out.println("");  
+        break;  
+   
+        case 4:
+        System.out.println("");
+        System.out.println("ThankYou! Visit Again!");
+        System.out.println("");
+        System.exit(0);  
+            }  
+        }  
+}
+}
